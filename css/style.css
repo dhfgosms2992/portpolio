@@ -426,7 +426,7 @@ button.btn:hover a {
     top: -667px;
     left: -500px;
     width: 1920px;
-    height: 1000px;
+    height: 7000px;
     background-color: #020515;
     z-index: 9;
     display: none;
@@ -439,7 +439,7 @@ button.btn:hover a {
 .my_info .social #modal-bg .qr-code {
     position: absolute;
     left: 35%;
-    top: 10%;
+    top: 1%;
     width: 600px;
     height: 700px;
     border-radius: 20px;
