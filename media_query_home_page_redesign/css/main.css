@@ -1,0 +1,923 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* font-family: 'Noto Sans KR', sans-serif; */
+
+@font-face {
+    font-family: "NotoSansKR-Medium";
+    src:url(../fonts/NotoSansKR-Medium.otf);
+}
+
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    color:black;
+    list-style-type: none;
+    text-transform: capitalize;
+    font-family: "NotoSansKR-Medium";
+}
+
+
+ i {color:white;}
+
+/* 전체 사이즈 영역 */
+.container {
+    /* 가로사이즈 */
+    width: 100%;
+    /* 가운데 정렬 */
+    margin: 0 auto;
+    /* position: absolute 부모 
+       요소의 위치를 선정하는 기준  */
+    position: relative;
+    /* 넘치는 컨테츠는 잘라서 안보이게  */
+    overflow:hidden; 
+    
+   
+   
+}
+
+/* header ================================================ */
+
+header {
+    /* float 대신 flex 를 사용하여 정렬 */
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    /* border: 1px solid red; */
+    margin:0 auto;
+    /* header 사이 여백 줄이기위해서  */
+    margin-bottom: -10px;
+    background-color: #696969;
+    position:relative;
+    
+    
+}
+
+header .mobile_btn {
+    display:none;
+}
+
+/* header logo_img */
+
+
+header a #logo_img {
+    margin:10px 20px;
+    width:90px;
+    height: 90px;
+    background: url(../img/lamborghini_icon.png);
+    background-repeat: no-repeat;
+    background-position:left center;
+    background-size: 100%;
+    text-indent: -9999px;
+    /* border: 1px solid red; */
+   
+}
+
+/* header ul li */
+
+
+
+header nav ul.gnb li {
+    /* 가로정렬 */
+    display: inline-block;
+    height: 80px;
+    /* 줄간격은 height 와 동일하게 */
+    line-height: 80px;
+    /* 위아래 좌우 */
+    padding: 10px 30px;
+    /* 최상위인 html 을 기준으로 1.2 */
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    
+    /* border: 1px solid red; */
+}
+
+header nav ul.gnb li a {
+    font-family: "NotoSansKR-Medium";
+    color:white;
+}
+
+/* header li hover  a */
+
+
+
+header nav ul.gnb li:hover a {
+    color:cornflowerblue;
+    border-bottom: 2px solid cornflowerblue;
+    padding-bottom: 2px;
+    box-sizing: border-box;
+    transition: all 1s ease;
+}
+
+/* header category  */
+
+header .category {
+    margin-top:10px;
+    height: 90px;
+    line-height: 90px;
+    /* 위아래 좌우 */
+    padding: 0 30px;
+    box-sizing: border-box;
+
+    /* border: 1px solid red; */
+    
+}
+
+header .category .btn {
+    padding: 10px 40px;
+    background-color:#A9A9A9;
+    cursor: pointer;
+}
+
+header .category .btn i {
+    color:white;
+}
+
+
+header .category .btn i:hover
+
+ {
+    color:#708090;
+}
+
+/* sidebar_menu ===================================================================*/
+
+.sidebar_menu {
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 45, 45, 0.7);
+    /* 뷰포트 기준  */
+    position: fixed;
+    top:-100%;
+    left:0;
+    /* 동작 에니메이션 */
+    /* [property] [duration] [timing] [delay] */
+    /* transition: all 1s ease; */
+    transition-property: all;
+    transition-duration:1s;
+    transition-timing-function: ease;
+    z-index:-1;
+    opacity: 0;
+    overflow:hidden;
+}
+
+.sidebar_menu .sidebar_inner {
+    /* container 영역의 relative */
+    position: absolute;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 60%;
+    text-align: center;
+    
+    /* border: 1px solid red; */
+}
+
+.sidebar_menu .sidebar_inner a {
+    display:block;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color:white;
+}
+
+/* .sidebar_menu .sidebar_inside_menu hover */
+.sidebar_menu .sidebar_inner a:hover {
+    color:cornflowerblue;
+    transform:scale(1.2);
+    transition-property:all;
+    transition-duration:1s;
+    transition-timing-function: ease;
+}
+
+
+input[name='catego'] {
+    /* input checkbox 를 지우기위해서  */
+    display: none;
+}
+
+input#catego:checked ~ .sidebar_menu {
+    top:0;
+    left:0;
+    opacity:1;
+    z-index: 3;
+}
+
+.sidebar_menu .close_icon {
+    position: fixed;
+    top: 20%;
+    right: 22%;
+    font-size: 50px;
+    cursor: pointer;
+} 
+
+/* img slide =====================================================================*/
+
+section.slide_img .slide_inner {
+    /* 1920px x 4  */
+    width: 7680px;
+    height: 600px;
+    /* 자식속성에 absolute 적용하기위해서 */
+    position: relative;
+   
+
+
+
+    /* border: 1px solid red; */
+}
+
+section.slide_img ul {
+    /* absolute 로 사진을 겹치게 */
+    position: absolute;
+    animation-name : slide_im;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes slide_im {
+    
+    0%{left:0;}
+    25%{left: -1920px;}
+    50%{left: -3840px;}
+    75%{left:-5760px;}
+    0%{left:0;}
+    /* 마지막 값은 1920 x 3 */
+    /* 첫번 째 장은 재외 넘어가는 장이기때문에 */
+    /* 100 분율 로 4를 나워서 25% */
+}
+
+section.slide_img ul li {
+    float:left;
+    width: 1920px;
+    height: 600px;
+    box-sizing: border-box;
+}
+
+section.slide_img ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+/* 01-05 수요일========================================================================= */
+/* section.content */
+
+section.content .title {
+    color: #000;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+section.content .title h2 {
+    font-size: 45px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+ span {
+    color:orange;
+}
+
+section .title p {
+    font-size: 18px;
+    line-height: 30px;
+    color: #555;
+}
+
+
+
+section.content {
+    width: 80%;
+    margin:0 auto;
+    background-color: #fff;
+    padding: 50px 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+    
+}
+
+/* section.content  ul */
+
+section.content ul {
+    /* 워아래 좌우 */
+    margin: 30px auto;
+    width: 100%;
+    /* ul 태그안에서 넘치면 가려짐 */
+    overflow:hidden;
+    /* border: 1px solid red; */
+}
+
+section.content ul li {
+    float:left;
+    width: calc(90%/3);
+    height: 100%;
+    box-sizing: border-box;
+    /* border: 3px solid red; */
+}
+
+section.content ul li:first-child {
+    margin-left: 60px;
+}
+
+
+section.content ul li a {
+    /* 
+    display:block 요소는 세로 정렬이지만
+    상위요소인 li 태그에 정렬을 왼쪽 정렬로 나누어서 세로 정렬 됨
+     */
+    display:block;
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+
+section.content ul li a p.title_img {
+    width: 100%;
+    height: 200px;
+    
+    
+    /* 
+    section 컨텐츠 클래스에 있는  
+    ul li a 호버시 p.title_img 클래스에있는 
+    img 가 클릭됬을시에 overflow:hidden 속성을
+    안주면 전체 이미지 크기가 커짐 그래서
+    아래 택스트가 가려짐
+    */
+    overflow: hidden;
+    
+
+}
+
+section.content ul li a p.title_img img {
+    /* 
+    상위 요소인 p.title_img 의 폭에 맞추어 100%
+    
+     */
+    width: 100%;
+    height: 100%;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    
+}
+
+section.content ul li a:hover p.title_img img {
+    transform: scale(1.2);
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+/* section.content .text_info */
+
+section.content ul li a .text_info {
+    padding: 10px ;
+    line-height: 30px;
+    width: 83%;
+    position: relative;
+
+    /* border: 1px solid red; */
+}
+
+section.content ul li a .text_info h3 {
+    font-size: 20px;
+}
+
+
+section.content ul li a .text_info p {
+    font-size: 16px;
+}
+
+section.content ul li a .text_info .learn_more {
+    text-transform: capitalize;
+    font-size: 20px;
+    background-color: cornflowerblue;
+    color:black;
+    width: 30%;
+    text-align: center;
+    border-radius: 20px;
+    position: absolute;
+    top:40px;
+    right:-30px;
+    transition: all 1s ease;
+}
+
+
+section.content ul li a .text_info .learn_more i {
+    color:black;
+}
+
+/* legendary newborn  section */
+
+section.content ul li a:hover .learn_more,
+section.content ul li a:hover .learn_more i
+ {
+    color:white;
+    transition: all 1s ease;
+}
+
+/* 01_09 일요일 ============================================================= */
+
+
+section.touring {
+    width: 80%;
+    background-color:white;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+
+
+
+section.touring .title {
+    width: 80%;
+    margin: 0 auto;
+    line-height: 90px;
+    margin-bottom: 30px;
+    /* border: 1px solid red; */
+}
+
+section.touring .title h2 {
+    font-size: 2.0rem;
+}
+
+
+section.touring .title h2 p {
+    font-size: 1.5rem;
+}
+
+/* section.touring touring_slide================================================ */
+
+section.touring .touring_slide {
+    width: 1200px;
+    height: 400px;
+    overflow:hidden;
+    /* 
+    touring_slide_img 의 너비가 4800px 이기때문에 그 이하일때는 
+    overflow 숨김
+     */
+    margin:0 auto;
+    /* border: 3px solid red; */
+}
+
+section.touring .touring_slide .touring_slide_img {
+    width: 4800px;
+    /* 1200x4 */
+    height: 400px;
+    position: relative;
+    /* border: 1px solid red; */
+    
+}
+
+
+
+section.touring .touring_slide ul {
+    position: absolute;
+    animation-name:slide_car; 
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    
+}
+
+@keyframes slide_car {
+    0%{left:0;}
+    25%{left: -1200px;}
+    50%{left: -2400px;}
+    75%{left:-3600px;}
+    0%{left:0;}
+}
+
+section.touring .touring_slide ul li {
+    float:left;
+    width: 1200px;
+    height: 400px;
+    box-sizing: border-box;
+}
+
+section.touring .touring_slide ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+/* section.touring ul.touring_info */
+
+section.touring ul.touring_info {
+    /* 위 좌우 아래 */
+    padding: 30px 0 80px;
+    text-transform: capitalize;
+    /* border: 1px solid red; */
+}
+
+section.touring ul.touring_info li {
+    width: calc(80%/4);
+    height: 250px;
+    display:inline-block;
+    padding: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-left: 5px;
+    /* border: 3px solid red; */
+}
+
+section.touring ul.touring_info li:first-child {
+    margin-left: 140px;
+}
+
+section.touring ul.touring_info li .card {
+    /* 95/4 */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+
+
+
+section.touring ul.touring_info li .card .card_img{
+    overflow: hidden;
+ 
+}
+
+section.touring ul.touring_info li .card .card_img img {
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease;
+}
+
+section.touring ul.touring_info li .card:hover .card_img img
+ {
+    
+    transform:scale(1.2);
+    transition: all 1s ease;
+    
+}
+
+section.touring ul.touring_info li .card .card_info h2{
+    font-size: 16px;
+}
+
+section.touring ul.touring_info li .card:hover .card_info h2 {
+    color:cornflowerblue;
+    
+}
+
+
+section.touring ul.touring_info li .card .card_info {
+    position: relative;
+}
+
+
+section.touring ul.touring_info li .card:hover .card_info a.btn {
+    color: white;
+}
+
+
+section.touring ul.touring_info li .card_info a.btn {
+    padding: 5px;
+    background-color:cornflowerblue;
+    border-radius: 30px;
+    position: absolute;
+    bottom:0;
+    right:0;
+    font-size: 12px;
+}
+
+
+/* footer ===============================================*/
+
+footer {
+    background-color:#696969;
+    width: 100%;
+    height: 300px;
+}
+
+footer .footer_inner {
+    width: 80%;
+    height: 300px;  
+    margin: 0 auto;
+    position: relative;
+    /* border: 1px solid red; */
+}
+
+footer .footer_inner h2.footer_logo {
+    position: absolute;
+    top:100px;
+    right:50px;
+    
+}
+footer .footer_inner h2.footer_logo a img {
+    width: 100px;
+    cursor:pointer;
+    /* border: 1px solid red; */
+}
+
+
+footer .footer_inner ul {
+    position: absolute;
+    top:10px;
+    left: 150px;
+    /* border: 1px solid red; */
+}
+
+footer .footer_inner ul li {
+    display:inline-block;
+    padding: 20px;
+    transition: all 1s ease;
+}
+
+footer .footer_inner ul li:hover a {
+    border-bottom: 2px solid cornflowerblue;
+    color:cornflowerblue;
+    padding-bottom: 2px;
+    transition: all 1s ease;
+}
+
+footer .footer_inner ul li a {
+    color:white;
+    
+}
+
+
+
+footer .footer_inner .footer_copyright {
+    width: 75%;
+    height: auto;
+    position: absolute;
+    top:100px;
+    left:140px;
+    /* border: 1px solid red; */
+}
+
+
+footer .footer_inner .footer_copyright p {
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color:white;
+}
+
+footer .footer_inner .footer_copyright p.top {
+    margin-top: 20px;
+}
+
+/* 01/10 월요일 =========================================================================== */
+
+@media screen and (max-width: 600px) {
+    .container {
+        min-width: 320px;
+        width: 95vw;
+        margin: 0 auto;
+    }
+
+    header a #logo_img {
+        width:40px;
+        height: 40px;
+        position: absolute;
+    }
+
+    /* header 600px 기준 */
+    
+    header nav  {
+        width: 100%;
+        margin:0 auto;
+        border: 1px solid black;
+    }
+
+    header nav ul.gnb li {
+        height: 60px;
+        line-height: 60px;
+    }
+
+    header .mobile_btn {
+        display: block;
+        position: absolute;
+        right:10px;
+        top:0;
+        cursor: pointer;
+    }
+
+     /* mobile max-width 600px 햄버거 메뉴 */
+    header .mobile_btn .btn {
+        line-height: 30px;
+        font-size: 25px;
+    }
+
+    header .mobile_btn .btn i {
+        cursor: pointer;
+    }
+
+    header nav ul.gnb li {
+        width: 80%;
+        display: block;
+        text-align: center;
+        margin:5px auto;
+
+    }
+
+    header .category {
+        display:none;
+    }
+
+    /* sidebar_menu */
+
+    .siderbar_menu {
+        width: 100%;
+    }
+
+    .sidebar_menu .sidebar_inner a {
+        font-size: 24px;
+    }
+
+    .sidebar_menu .close_icon  {
+        top: 22%;
+        right: 22%;
+        font-size:30px;
+    }
+    
+    /* section.slide_img */
+
+    section.slid_img {
+        width: 400vw;
+        height: 300px;
+        position:relative;
+    }
+
+    section.slide_img .slide_inner {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+
+    section.slide_img ul li {
+        width: 100vw;
+        height: 300px;
+    }
+
+   
+
+    section.slide_img ul li img {
+        margin-top: 10px;
+        
+    }
+
+    @keyframes slide_im {
+        0%{left:0;}
+        25%{left: -100vw;}
+        50%{left: -200vw;}
+        75%{left:-300vw;}
+        0%{left:0;}
+    }
+
+   
+    /* section.content */
+
+    section.content {
+        width: 100%;
+    }
+
+    section.content .title {
+        margin-top:-20px;
+        
+    }
+
+    section.content .title h2 {
+        font-size: 20px;
+    }
+    
+
+    section.content .title p {
+        font-size: 16px;
+    }
+
+    
+
+    section.content ul li {
+        width: calc(80%/1);
+        margin: 10px 40px;
+    }
+
+    section.content ul li:first-child {
+        margin: 10px 40px;
+    }
+
+    section.content ul li a .text_info h3 {
+        font-size: 16px;
+    }
+
+    section.content ul li a .text_info p {
+        font-size: 14px;
+    }
+
+    /* section.touring */
+
+    section.touring {
+        width: 100%;
+    }
+
+    section.touring .title {
+        width: 100%;
+        text-align:center;
+    }
+
+    section.touring .title h2 {
+        font-size: 22px;
+        
+    }
+
+    section.touring .title p {
+        font-size: 15px;
+    }
+     
+    section.touring .touring_slide {
+        width: 400vw;
+        height: 200px;
+        position:relative;
+    }
+
+    @keyframes slide_car {
+        0%{left:0;}
+        25%{left: -100vw;}
+        50%{left: -200vw;}
+        75%{left:-300vw;}
+        0%{left:0;}
+    }
+
+    section.touring .touring_slide ul li {
+        width: 100vw;
+        height: 200px;
+    }
+
+    section.touring ul.touring_info li {
+        margin: 10px 50px;
+        width: calc(80%/1);
+        height: 300px;
+    }
+    section.touring ul.touring_info li:first-child {
+        margin: 10px 50px;
+    }
+
+    section.touring ul.touring_info li .card_info h2 {
+        font-size: 14px;
+        
+    }
+
+    section.touring .touring_info .card_info .btn a {
+        font-size: 16px;
+    }
+
+    section.content ul li a .text_info .learn_more {
+        font-size: 14px;
+    }
+
+    /* footer */
+
+    footer .footer_inner {
+        width: 100%;
+    }
+
+    footer .footer_inner h2.footer_logo {
+        right:10px;
+        top:250px;
+        z-index: 500;
+    }
+
+    footer .footer_inner h2.footer_logo a img {
+        width: 30px;
+        cursor:pointer;
+        /* border: 1px solid red; */
+        
+    }
+
+    footer .footer_inner ul {
+        top:0;
+        left:0;
+        text-align: center;
+    }
+
+    footer .footer_inner ul li {
+        font-size: 10px;
+        padding:10px;
+        
+    }
+
+    footer .footer_inner .footer_copyright {
+        width: 100%;
+        bottom:0;
+        left:0px;
+    }
+
+    footer .footer_inner .footer_copyright p {
+        font-size: 10px;
+        line-height: 20px;
+        text-align: center;
+        color:white;
+    }
+    
+    footer .footer_inner .footer_copyright p.top {
+        margin-top: 20px;
+    }
+
+
+
+}
