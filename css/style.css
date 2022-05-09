@@ -443,7 +443,7 @@ button.btn:hover a {
     width: 600px;
     height: 700px;
     border-radius: 20px;
-    background-color: white;
+    border: 5px solid white;
     overflow: hidden;
 }
 
@@ -453,12 +453,13 @@ button.btn:hover a {
 }
 
 
+
 .my_info .social #modal-bg .qr-code .inner-qr-code .qr-code-infinity-scrolling {
     position: absolute;
     height: 40px;
     /* left: 130px; */
     left: 0;
-    top: 130px;
+    top: 90px;
     width: 2000px;
     display: flex;
     overflow: hidden;
@@ -485,7 +486,8 @@ button.btn:hover a {
     font-weight: bold;
     text-align: center;
     padding-left: 20px;
-    color: var(--box-color);
+    /* color: var(--box-color); */
+    color:white;
 
 }
 
@@ -501,10 +503,22 @@ button.btn:hover a {
     background-color: black;
 }
 
+
+.my_info .social #modal-bg .qr-code .inner-qr-code .qr-img-box {
+    position: absolute;
+    top:180px;
+    left:80px;
+    width: 450px;
+    height: 450px;
+    background-color: white;
+}
+
+
+
 .my_info .social #modal-bg .qr-code .inner-qr-code img {
     position: absolute;
-    left: 18%;
-    top: 200px;
+    left:5%;
+    top:5%;
     width: 400px;
     height: 400px;
 }
