@@ -443,7 +443,7 @@ button.btn:hover a {
     width: 600px;
     height: 700px;
     border-radius: 20px;
-    border: 5px solid white;
+    background-color: white;
     overflow: hidden;
 }
 
@@ -485,6 +485,7 @@ button.btn:hover a {
     font-weight: bold;
     text-align: center;
     padding-left: 20px;
+    color: var(--box-color);
 
 }
 
@@ -502,8 +503,8 @@ button.btn:hover a {
 
 .my_info .social #modal-bg .qr-code .inner-qr-code img {
     position: absolute;
-    left: 15%;
-    top: 190px;
+    left: 18%;
+    top: 200px;
     width: 400px;
     height: 400px;
 }
