@@ -5,7 +5,7 @@ $(function() {
 
         // 2. 옵션 지정
         // 섹션(슬라이드) 배경색
-        sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', 'cornflowerblue', 'green'],
+        // sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', 'cornflowerblue', 'green'],
         // 스크롤 속도
         scrollingSpeed: 500,
         // 연결 링크 (메뉴)
@@ -238,8 +238,11 @@ $(function(){
       //    attr 속성 선택
       // class,value
          mouseover: function(){
-             $('.kakao-img > a > img').attr('src', "img/kako-profile.png" )
-         }
+             $('.kakao-img  > label >  a > img').attr('src', "img/kako-profile.png" )
+         },
+         mouseleave: function(){
+          $('.kakao-img  > label >  a > img').attr('src', "img/kakao.png" )
+      }
         
      });
 
