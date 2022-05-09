@@ -653,8 +653,8 @@ button.btn:hover a {
 .main_title_flex .main_title_box .ability_text .mark {
     position: absolute;
     top: 30px;
-    left: 30%;
-    width: 390px;
+    left: 33%;
+    width: 330px;
     height: 20px;
     background-color: var(--mark-color);
 }
