@@ -21,7 +21,10 @@
     --button: #5d7496;
     --button-text: #2c405e;
     --html-css : #ED7823;
-
+    --jquery : #000000;
+    --figma : #A74E9E;
+    --photoshop : #232161;
+    --illustrator : #D28D29;
 }
 
 a {
@@ -660,7 +663,7 @@ button.btn:hover a {
 
 .main_title_flex .main_title_box .animate_chart_box .graph_line {
     width: 100%;
-    height: 60px;
+    height: 150px;
 
 
 }
@@ -688,7 +691,7 @@ button.btn:hover a {
 
 
 .main_title_flex .main_title_box .animate_chart_box .bar_active div {
-    margin: 20px;
+    margin: 21px;
     width: 0%;
     height: 100%;
     background-color: white; 
@@ -697,22 +700,31 @@ button.btn:hover a {
 }
 
 .main_title_flex .main_title_box .animate_chart_box .bar_active div:nth-child(1){
-   
+   background-color: var(--html-css);
+   margin-top: 22px;
 }
 
 
 .main_title_flex .main_title_box .animate_chart_box .bar_active div:nth-child(2) {
     margin-top: 24px;
-    
+    background-color: var(--jquery);
+}
+
+.main_title_flex .main_title_box .animate_chart_box .bar_active div:nth-child(3){
+    background-color: var(--figma);
+    margin-top:21px;
 }
 
 
 .main_title_flex .main_title_box .animate_chart_box .bar_active div:nth-child(4) {
     margin-top: 24px;
+    background-color: var(--photoshop);
+    
 }
 
 .main_title_flex .main_title_box .animate_chart_box .bar_active div:nth-child(5) {
-    margin-top: 21px;
+    margin-top: -3px;
+    background-color: var(--illustrator);
 }
 
 
@@ -725,7 +737,8 @@ button.btn:hover a {
     height: 30px;
     margin-top: 15px;
     margin-left: 30px;
-    color: var(--main-color);
+    /* color: var(--main-color); */
+    color:white;
     font-weight: bold;
 
 }
@@ -741,8 +754,8 @@ button.btn:hover a {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: var(--main-color);
-
+    /* background-color: var(--main-color); */
+    background-color: white;
     box-sizing: border-box;
     position: absolute;
     left: 6%;
@@ -751,7 +764,7 @@ button.btn:hover a {
 
 
 .main_title_flex .main_title_box .animate_chart_box .bar_active .span1 {
-    margin-top: 9px;
+    margin-top: 6px;
 }
 
 
@@ -767,12 +780,12 @@ button.btn:hover a {
 
 
 .main_title_flex .main_title_box .animate_chart_box .bar_active .span4 {
-    margin-top: 10px;
+    margin-top: 7px;
 }
 
 
 .main_title_flex .main_title_box .animate_chart_box .bar_active .span5 {
-    margin-top: 10px;
+    margin-top: 6px;
 }
 
 /*  #seection2 ------------------------------------------------------------------*/
